@@ -17,7 +17,8 @@ class MainViewModel {
     val state: LiveData<Array<Comment>>
         get() = _state
 
-    private val service: CommentService = Retrofit.Builder().baseUrl("http://10.0.2.2:3002/")
+    private val service: CommentService = Retrofit.Builder()
+        .baseUrl("http://10.0.2.2:3002/") // port could variate respectively with your service
         .addConverterFactory(GsonConverterFactory.create())
         .build().create(CommentService::class.java)
 
@@ -33,7 +34,7 @@ class MainViewModel {
                 }
 
                 override fun onFailure(call: Call<Array<Comment>>, t: Throwable) {
-                    println("*_*: error: ${t.localizedMessage}")
+                    _state.value = emptyArray()
                 }
             })
         }
