@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DelegateExample</string>
+    <string name="go_to_top">go to top</string>
 </resources>
