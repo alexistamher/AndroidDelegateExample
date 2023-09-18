@@ -7,7 +7,7 @@ sealed class MainUiState(
     val list: Int = View.GONE,
     val empty: Int = View.GONE
 ) {
-    data object Loading : MainUiState(loading = View.VISIBLE)
-    data object ShowList : MainUiState(list = View.VISIBLE)
-    data object EmptyList : MainUiState(empty = View.VISIBLE)
+    object Loading : MainUiState(loading = View.VISIBLE)
+    object ShowList : MainUiState(list = View.VISIBLE)
+    object EmptyList : MainUiState(empty = View.VISIBLE)
 }
